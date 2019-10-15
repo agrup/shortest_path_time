@@ -4,7 +4,7 @@ import datetime
 import csv
 #config 
 folder = "graph_gml/"
-nodos = [10000,100000,100000]
+nodos = [10**3,10**4,10**5]
 probs = [1,0.5,0.2]
 
 #functions
@@ -54,7 +54,7 @@ def get_johnson_time(G,weight='weight'):
     end=datetime.datetime.now()
     return(end-begin,distance)
 
-er = create_er_graph()
+er = create_er_graph(nodos=nodos)
 print("er created")
 with open('result.csv','w')as file:
         writer = csv.writer(file,delimiter=',')
@@ -70,7 +70,7 @@ for graph in list(er):
         writer.writerow(('erdos renyi',str(nodos),str(edges),str(time_fw),str(time_jo)))
         
 
-ba = create_ba_graph()
+ba = create_ba_graph(nodos=nodos)
 print("ba created")
 for graph in list(ba):
     time_fw,dist = get_floyd_washall_time(graph)
