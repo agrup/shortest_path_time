@@ -55,7 +55,7 @@ def get_johnson_time(G,weight='weight'):
     return(end-begin,distance)
 
 er = create_er_graph()
-
+print("er created")
 with open('result.csv','w')as file:
         writer = csv.writer(file,delimiter=',')
         writer.writerow(('Tipo grafo','nodos','edges','tiempo floyd warshal' ,'tiempo johnson'))   
@@ -71,7 +71,7 @@ for graph in list(er):
         
 
 ba = create_ba_graph()
-
+print("ba created")
 for graph in list(ba):
     time_fw,dist = get_floyd_washall_time(graph)
     time_jo,dist = get_johnson_time(graph)
