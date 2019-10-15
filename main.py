@@ -21,8 +21,9 @@ def create_er_graph(nodos=[10,100,1000],probs=[1,0.3,0.1]):
             graph = nx.erdos_renyi_graph(cnt_nodos,p)
             graph = graph_add_random_weight(graph)
             graphs_er.append(graph)
-            nx.write_edgelist(graph,"{}erdos_renyi_nodos={}_prob={}.edges.gml".format(folder,str(cnt_nodos),str(p)))
-            nx.write_gml(graph,"{}erdos_renyi_nodos={}_prob={}.nodes.gml".format(folder,str(cnt_nodos),str(p)))
+            print(graph,"{}erdos_renyi_nodos={}_prob={}.edges.gml".format(folder,str(cnt_nodos),str(p)))
+            #nx.write_edgelist(graph,"{}erdos_renyi_nodos={}_prob={}.edges.gml".format(folder,str(cnt_nodos),str(p)))
+            #nx.write_gml(graph,"{}erdos_renyi_nodos={}_prob={}.nodes.gml".format(folder,str(cnt_nodos),str(p)))
     return graphs_er
 
 def create_ba_graph(nodos=[50,100,1000],probs=[1,0.5]):
@@ -37,8 +38,9 @@ def create_ba_graph(nodos=[50,100,1000],probs=[1,0.5]):
             #print("barabasi edges",int(cnt_nodos*p),cnt_nodos,p,"nodos",cnt_nodos)
             graph_add_random_weight(graph)
             graphs_ba.append(graph)
-            nx.write_edgelist(graph,"{}barabasi_albert_nodos={}_probs={}.edges.gml".format(folder,str(cnt_nodos),str(p)))
-            nx.write_gml(graph,"{}barabasi_albert_nodos={}_probs={}.nodes.gml".format(folder,str(cnt_nodos),str(p)))
+            print(graph,"{}barabasi_albert_nodos={}_probs={}".format(folder,str(cnt_nodos),str(p)))
+            #nx.write_edgelist(graph,"{}barabasi_albert_nodos={}_probs={}.edges.gml".format(folder,str(cnt_nodos),str(p)))
+            #nx.write_gml(graph,"{}barabasi_albert_nodos={}_probs={}.nodes.gml".format(folder,str(cnt_nodos),str(p)))
     return graphs_ba
 
 
