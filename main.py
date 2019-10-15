@@ -54,7 +54,7 @@ def get_johnson_time(G,weight='weight'):
     end=datetime.datetime.now()
     return(end-begin,distance)
 
-er = create_er_graph(nodos=[100])
+er = create_er_graph()
 
 with open('result.csv','w')as file:
         writer = csv.writer(file,delimiter=',')
@@ -70,7 +70,7 @@ for graph in list(er):
         writer.writerow(('erdos renyi',str(nodos),str(edges),str(time_fw),str(time_jo)))
         
 
-ba = create_ba_graph(nodos=[100])
+ba = create_ba_graph()
 
 for graph in list(ba):
     time_fw,dist = get_floyd_washall_time(graph)
