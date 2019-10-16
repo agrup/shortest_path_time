@@ -66,6 +66,33 @@ with open('result.csv','w')as file:
         writer.writerow(('Tipo grafo','nodos','edges','tiempo floyd warshal' ,'tiempo johnson'))   
 
 
+#grafo prueba
+nodos=10
+edges=[nodos*nodos,nodos,nodos/2]
+
+er = create_er_graph(nodos=[nodos],edges=edges)
+print("er created")
+time_fw = get_floyd_washall_time(er[0])
+time_jo = get_johnson_time(er[0])
+save_results(er[0],"erdos renyi",time_fw,time_jo)
+
+time_fw = get_floyd_washall_time(er[1])
+time_jo = get_johnson_time(er[1])
+save_results(er[1],"erdos renyi",time_fw,time_jo)
+
+time_fw = get_floyd_washall_time(er[2])
+time_jo = get_johnson_time(er[2])
+save_results(er[1],"erdos renyi",time_fw,time_jo)
+
+ba = create_ba_graph(nodos=[nodos])
+print("ba created")
+time_fw = get_floyd_washall_time(ba[0])
+time_jo = get_johnson_time(ba[0])
+save_results(ba[0],"barabasi albert",time_fw,time_jo)
+
+time_fw = get_floyd_washall_time(ba[1])
+time_jo = get_johnson_time(ba[1])
+save_results(ba[1],"barabasi albert",time_fw,time_jo)
 
 # creo los grafos con 1000 nodos
 nodos=10**3
@@ -75,25 +102,25 @@ er = create_er_graph(nodos=[nodos],edges=edges)
 print("er created")
 time_fw = get_floyd_washall_time(er[0])
 time_jo = get_johnson_time(er[0])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[0],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[1])
 time_jo = get_johnson_time(er[1])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[1],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[2])
 time_jo = get_johnson_time(er[2])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[2],"erdos renyi",time_fw,time_jo)
 
 ba = create_ba_graph(nodos=[nodos])
 print("ba created")
 time_fw = get_floyd_washall_time(ba[0])
 time_jo = get_johnson_time(ba[0])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[0],"barabasi albert",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(ba[1])
 time_jo = get_johnson_time(ba[1])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[1],"barabasi albert",time_fw,time_jo)
 
 # creo los grafos con 10000 nodos
 nodos=10**4
@@ -103,26 +130,26 @@ er = create_er_graph(nodos=[nodos],edges=edges)
 print("er created")
 time_fw = get_floyd_washall_time(er[0])
 time_jo = get_johnson_time(er[0])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[0],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[1])
 time_jo = get_johnson_time(er[1])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[1],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[2])
 time_jo = get_johnson_time(er[2])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[2],"erdos renyi",time_fw,time_jo)
 
 
 ba = create_ba_graph(nodos=[nodos],)
 print("ba created")
 time_fw = get_floyd_washall_time(ba[0])
 time_jo = get_johnson_time(ba[0])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[0],"barabasi albert",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(ba[1])
 time_jo = get_johnson_time(ba[1])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[1],"barabasi albert",time_fw,time_jo)
 
 
 # creo los grafos con 100000 nodos
@@ -133,15 +160,15 @@ er = create_er_graph(nodos=[nodos],edges=edges)
 print("er created")
 time_fw = get_floyd_washall_time(er[0])
 time_jo = get_johnson_time(er[0])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[0],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[1])
 time_jo = get_johnson_time(er[1])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[1],"erdos renyi",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(er[2])
 time_jo = get_johnson_time(er[2])
-save_results(er,"erdos renyi",time_fw,time_jo)
+save_results(er[2],"erdos renyi",time_fw,time_jo)
 
 
 
@@ -149,11 +176,11 @@ ba = create_ba_graph(nodos=[nodos])
 print("ba created")
 time_fw = get_floyd_washall_time(ba[0])
 time_jo = get_johnson_time(ba[0])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[0],"barabasi albert",time_fw,time_jo)
 
 time_fw = get_floyd_washall_time(ba[1])
 time_jo = get_johnson_time(ba[1])
-save_results(er,"barabasi albert",time_fw,time_jo)
+save_results(ba[1],"barabasi albert",time_fw,time_jo)
 
 # for graph in list(er):
 #     time_fw,dist = get_floyd_washall_time(graph)
